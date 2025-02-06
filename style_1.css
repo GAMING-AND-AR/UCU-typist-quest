@@ -1,4 +1,4 @@
-/* Reset */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,60 +6,70 @@
 }
 
 body {
-    font-family: "Courier New", Courier, monospace; /* Monospace font for console look */
+    font-family: "Courier New", Courier, monospace;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
     height: 100vh;
-    background: linear-gradient(180deg, #000 0%, #003300 100%); /* Matrix-like dark green gradient */
-    color: #4caf50; /* Matrix green */
+    background: linear-gradient(180deg, #000 0%, #003300 100%);
+    color: #4caf50;
     text-align: center;
-    overflow: hidden;
+    overflow: auto;
 }
 
-/* Header Styling */
+/* Header */
 header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Finger Guide */
+.finger-guide {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; /* Space between elements */
-    margin-bottom: 20px; /* Space before the keyboard */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-header h1 {
-    font-size: 2em;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px #4caf50;
-}
-
-header h2 {
-    font-size: 1.5em;
-    text-shadow: 0 0 5px #4caf50;
-}
-
-header p {
-    font-size: 1.2em;
+.finger {
+    padding: 10px 15px;
+    font-size: 14px;
     font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
+
+/* Assign Colors to Each Finger */
+.left-pinky { background-color: red; }
+.left-ring { background-color: orange; }
+.left-middle { background-color: yellow; }
+.left-index { background-color: green; }
+
+.right-index { background-color: blue; }
+.right-middle { background-color: indigo; }
+.right-ring { background-color: violet; }
+.right-pinky { background-color: pink; }
 
 /* Keyboard Layout */
 .keyboard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px; /* Space between rows */
+    gap: 10px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     box-shadow: 0 0 10px #4caf50;
 }
 
-/* Styling for Each Row */
+/* Keyboard Rows */
 .row1, .row2, .row3 {
     display: flex;
     justify-content: center;
-    gap: 5px; /* Space between keys */
+    gap: 5px;
 }
 
 /* Key Styling */
@@ -72,52 +82,49 @@ header p {
     font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
-    box-shadow: 0 0 10px white;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 5px black;
     transition: transform 0.2s;
-    color:#000;
 }
 
+/* Assign Colors to Keyboard Keys */
+.key.left-pinky { background-color: red; }
+.key.left-ring { background-color: orange; }
+.key.left-middle { background-color: yellow; }
+.key.left-index { background-color: green; }
+
+.key.right-index { background-color: blue; }
+.key.right-middle { background-color: indigo; }
+.key.right-ring { background-color: violet; }
+.key.right-pinky { background-color: pink; }
+
+/* Hover Effect */
 .key:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px white;
 }
 
-/* Left-hand keys */
-.left-hand { 
-    background-color: orange;
-    box-shadow: 0 0 10px orange; 
-}
-
-/* Right-hand keys */
-.right-hand { 
-    background-color: purple;
-    box-shadow: 0 0 10px purple; 
-}
-
-/* Footer & Button */
+/* Footer */
 footer {
     margin-top: 20px;
 }
 
-button {
+/* Button */
+.button {
+    display: inline-block;
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
     background-color: #4caf50;
     color: black;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
     box-shadow: 0 0 10px #4caf50;
     transition: background 0.3s, transform 0.2s;
 }
 
-button:hover {
+.button:hover {
     background-color: #2e7d32;
     transform: scale(1.1);
-}
-
-button a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
 }
